@@ -12,7 +12,12 @@
   "bugs": {
     "url": "https://github.com/jwplayer/jwplayer-react/issues"
   },
-  "main": "./lib/jwplayer-react.js",
+  "exports": {
+    ".": {
+      "default": "./lib/jwplayer-react.js",
+      "types": "./src/jwplayer-react.d.ts"
+    }
+  },
   "scripts": {
     "build": "webpack && npm run badges:build:passing || npm run badges:build:failing",
     "ci": "npm ci; npm run build; npm run test; npm run lint; npm run badges:license",
