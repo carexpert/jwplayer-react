@@ -1,6 +1,5 @@
 declare module '@jwplayer/jwplayer-react' {
-    import jwplayer from './jwplayer';
-    import type { ComponentType, HTMLProps } from 'react'
+    import type { ComponentType, HTMLProps } from 'react';
     /**
      * Example: {"2500":"High","1000":"Medium"}
      */
