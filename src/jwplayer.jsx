@@ -3,7 +3,7 @@ import {
   ALL, ON_REGEX, ONCE_REGEX,
 } from './const';
 import {
-  generateConfig, generateUniqueId, loadPlayer, getHandlerName,
+  generateConfig, generateUniqueId, loadPlayer, getHandlerName, getLibraryDefaults,
 } from './util';
 
 function createOnEventHandler(props) {
@@ -71,7 +71,8 @@ class JWPlayer extends React.Component {
 
   createPlayer() {
     const { config, ref } = this;
-    const setupConfig = { ...window.jwDefaults, ...config };
+    const defaults = getLibraryDefaults(this.library);
+    const setupConfig = { ...defaults, ...config };
     const view = ref.current;
 
     return window.jwplayer(view.id).setup(setupConfig);
